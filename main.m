@@ -48,7 +48,7 @@ addpath(genpath('.')); % use restoredefaultpath to reinitialize
 clc; close all; clear;
 
 % 1 to display logs in command window (verbose mode) / 0 for no log
-p.verb1 = 1; % important structured information
+p.verb1 = 0; % important structured information
 p.verb2 = 0; % less important debugging
 p.pdf = 1;   % generate PDF of figures (takes a few seconds and might make MATLAB crash !!!)
 p.pdfFolder = './Figures/'; % folde in which these PDF figures are stored
