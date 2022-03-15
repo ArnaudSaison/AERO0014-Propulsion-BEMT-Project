@@ -33,7 +33,5 @@ p.init_v_u2p = 0;                       % [m/s]     propeller exit velocity
 % -------------------------------------------------------------------------
 % Itaration parameters
 % -------------------------------------------------------------------------
-i.tol = 1e-5;                           % [-]       tolerance = relative change in velocity components
-i.max = 50;                             % [#]       maximum number of iterations
-i.i = 1;                                % [#]       iteration count
-%j = 1;                                 % [#]       position along radius
+p.i.tol = 1e-5;                           % [-]       tolerance = relative change in velocity components
+p.i.max = 50;                             % [#]       maximum number of iterations

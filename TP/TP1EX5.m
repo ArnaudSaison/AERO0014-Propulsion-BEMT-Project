@@ -5,24 +5,12 @@
 
 %%
 clear all; close all; clc; %warning off;
-verb = 0;
+p.verb1 = 1;
+p.verb2 = 0;
 
 %%
 % Initializing parameters
 TP_Param;
 
 % using the BEM function
-BEM(p)
-
-
-
-
-
-
-
-
-
-
-
-
-
+[res, p] = BEM(p);

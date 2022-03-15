@@ -17,7 +17,7 @@ p.C_L =@(aoa, Re) 0.1101 * aoa + 0.4409;                    % [-]@[°][-]   lift
 p.C_D =@(aoa, Re) 0.0006 * aoa^2 - 0.0042 * aoa + 0.0050;   % [-]@[°][-]   drag coeff
 
 % Sections
-p.nb_pos = 100;                                             % [#]	number of positions along the propeller
+p.nb_pos = 200;                                             % [#]	number of positions along the propeller
 p.pos = linspace(p.root_cutout,1,p.nb_pos);                 % [-]	positions = x/R
 p.r = p.pos * p.R;                                          % [m]	positions = x
 
