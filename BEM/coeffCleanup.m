@@ -10,6 +10,7 @@ if nargin == 1
 	rpl = 0;
 end
 
+% Cleanup
 selected_val = (dataIn < 0 | dataIn > 1);   % finding impossible values
 
 dataOut = dataIn .* (~selected_val);        % all selected values are set to 0
