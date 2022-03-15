@@ -110,9 +110,9 @@ end
 clear speed col;
 
 % cleaning up the data to removing impossible values
-Q2.C_T = coeffCleanup(Q2.C_T, -1);
-Q2.C_P = coeffCleanup(Q2.C_P, -1);
-Q2.eta_P = coeffCleanup(Q2.eta_P, -1);
+Q2.C_T = coeffCleanup(Q2.C_T, -1, 0, 10);
+Q2.C_P = coeffCleanup(Q2.C_P, -1, 0, 10);
+Q2.eta_P = coeffCleanup(Q2.eta_P, -1, 0, 1);
 
 % Printing the figures
 printFigs(Q2, p, p.pdf);

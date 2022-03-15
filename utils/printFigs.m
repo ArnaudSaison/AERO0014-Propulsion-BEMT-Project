@@ -14,19 +14,21 @@ legend_text = append('\theta = ', strjust(append(string(num2str(rad2deg(p.collec
 fig.thrust = figure('Name', 'Thust coefficient as a function of the advance ratio');
 plot(Q2.J, Q2.C_T);
 xlim([0, max(Q2.J)]);
-ylim([0, max(Q2.C_T,[],'all')]);
+ylim([0, max(Q2.C_T,[],'all') * 1.1]);
 legend(legend_text, 'Location', 'Southwest');
 xlabel('Advance ratio J [-]')
 ylabel('Thrust coefficient C_T [-]');
+grid('on');
 
 %
 fig.power = figure('Name', 'Power coefficient as a function of the advance ratio');
 plot(Q2.J, Q2.C_P);
 xlim([0, max(Q2.J)]);
-ylim([0, max(Q2.C_P,[],'all')]);
+ylim([0, max(Q2.C_P,[],'all') * 1.1]);
 legend(legend_text, 'Location', 'Southwest');
 xlabel('Advance ratio J [-]')
 ylabel('Power coefficient C_P [-]');
+grid('on');
 
 %
 fig.eff = figure('Name', 'Propulsive efficiency as a function of the advance ratio');
@@ -36,6 +38,7 @@ ylim([0, 1]);
 legend(legend_text, 'Location', 'Southwest');
 xlabel('Advance ratio J [-]')
 ylabel('Propulsive efficiency \eta_P [-]');
+grid('on');
 
 % printing to PDF
 if pdf == 1
