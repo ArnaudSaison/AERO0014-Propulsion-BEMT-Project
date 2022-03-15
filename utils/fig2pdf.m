@@ -19,18 +19,28 @@ function fig2pdf(fig_name, name, height, AR, folder)
 %   dimensions.
 %   
 
+% optional argument for folder
 if nargin == 4
     folder = '';
 end
 
+% in the folder does not exist
+if ~exist(folder, 'dir')
+    mkdir(folder);
+    warning('Missing folder was created to save the Figure.', 'verbose');
+end
+
+% settings
 print_figures.H = height * 10;
 print_figures.W = height * 10 * AR;
 margin = 0;
 full_name = [folder, name, '.pdf'];
 
+% dimensions of the Figure
 set(fig_name, 'PaperPosition', [margin/2 margin/2 print_figures.W print_figures.H])
 set(fig_name, 'PaperSize', [print_figures.W+margin print_figures.H+margin])
-%get(gca,'OuterPosition')
+
+% printing the figure
 print(fig_name, full_name, '-dpdf', '-r300' );
 
 end
