@@ -39,9 +39,9 @@ ylabel('Propulsive efficiency \eta_P [-]');
 
 % printing to PDF
 if pdf == 1
-    fig2pdf(fig.thrust, 'ThrustAdvanceRatio', 1, 1.5, p.pdfFolder);
-    fig2pdf(fig.power, 'PowerAdvanceRatio', 1, 1.5, p.pdfFolder);
-    fig2pdf(fig.eff, 'EfficiencyAdvanceRatio', 1, 1.5, p.pdfFolder);
+    fig2pdf(fig.thrust, 'ThrustAdvanceRatio', 1, 1.5, p.pdf_folder);
+    fig2pdf(fig.power, 'PowerAdvanceRatio', 1, 1.5, p.pdf_folder);
+    fig2pdf(fig.eff, 'EfficiencyAdvanceRatio', 1, 1.5, p.pdf_folder);
 end
 
 end

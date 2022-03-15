@@ -51,7 +51,7 @@ clc; close all; clear;
 p.verb1 = 0; % important structured information
 p.verb2 = 0; % less important debugging
 p.pdf = 1;   % generate PDF of figures (takes a few seconds and might make MATLAB crash !!!)
-p.pdfFolder = './Figures/'; % folde in which these PDF figures are stored
+p.pdf_folder = './Figures/'; % folde in which these PDF figures are stored
 
 
 %% ========================================================================
