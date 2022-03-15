@@ -14,4 +14,6 @@ for j = 1:length(r)-1
     output = output + ((values(:,j) + values(:,j+1)) / 2 * (r(j+1) - r(j)));
 end
 
+% output = trapz(r, values);
+
 end
