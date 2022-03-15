@@ -34,7 +34,7 @@ p.collectives = linspace(p.min_collective,p.max_collective,p.nb_collectives) /18
 
 % Question 2
 p.nb_airspeeds = 50;
-p.min_airspeed = 40;
+p.min_airspeed = 50;
 p.max_airspeed = 250;
 
 p.airspeeds = linspace(p.min_airspeed,p.max_airspeed,p.nb_airspeeds) ...
