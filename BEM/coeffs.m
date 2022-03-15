@@ -10,4 +10,3 @@ eta_P = res.T * p.v_inf / res.P;                                    % propulsive
 J = p.v_inf / (p.Omega / (2*pi) * p.D);                             % advance ratio
 
 end
-

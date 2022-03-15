@@ -8,7 +8,7 @@ if nargin == 2
 end
 
 % text for the legends since they are all the same
-legend_text = append('\theta = ', string(num2str(rad2deg(p.collectives)')), '°');
+legend_text = append('\theta = ', strjust(append(string(num2str(rad2deg(p.collectives)')), '°'), 'left'));
 
 % 
 fig.thrust = figure('Name', 'Thust coefficient as a function of the advance ratio');
@@ -39,9 +39,9 @@ ylabel('Propulsive efficiency \eta_P [-]');
 
 % printing to PDF
 if pdf == 1
-    fig2pdf(fig.thrust, 'ThrustAdvanceRatio', 1, 1.5, p.pdfFolder);
-    fig2pdf(fig.power, 'PowerAdvanceRatio', 1, 1.5, p.pdfFolder);
-    fig2pdf(fig.eff, 'EfficiencyAdvanceRatio', 1, 1.5, p.pdfFolder);
+    fig2pdf(fig.thrust, 'ThrustAdvanceRatio', 1, 1.5, p.pdf_folder);
+    fig2pdf(fig.power, 'PowerAdvanceRatio', 1, 1.5, p.pdf_folder);
+    fig2pdf(fig.eff, 'EfficiencyAdvanceRatio', 1, 1.5, p.pdf_folder);
 end
 
 end
