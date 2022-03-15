@@ -1,5 +1,5 @@
-function [output] = intProp(values, r)
-%INTPROP integrates the input values over the radii contained in r
+function [output] = integrate(values, r)
+%INTEGRATE integrates the input values over the radii contained in r
 %   values: contains une value type per line and the columns correspond to
 %   the values for each radii
 %

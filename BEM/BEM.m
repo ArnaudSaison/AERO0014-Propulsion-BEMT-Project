@@ -22,9 +22,9 @@ end
 printTot(res, p);
 
 % Integration of the results over the whole propeller
-res.T = intProp(res.dT, p.r);
-res.C = intProp(res.dC, p.r);
-res.P = intProp(res.dP, p.r);
+res.T = integrate(res.dT, p.r);
+res.C = integrate(res.dC, p.r);
+res.P = integrate(res.dP, p.r);
 
 % Log
 printInt(res, p);
