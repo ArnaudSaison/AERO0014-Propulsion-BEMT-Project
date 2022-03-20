@@ -4,7 +4,8 @@
 p.n = 3;                                % [#]       nb of blades
 p.D = 1.9;                              % [m]       diameter = 2 * R (radius)
 p.R = p.D / 2;                          % [m]       
-p.Omega = 2300 / 60 * 2*pi;             % [rad/s]   constant speed
+p.Omega_n = 2300    /60;                % [RPM]->[RPS]      constant speed (can be changed)
+p.Omega = p.Omega_n *2*pi;              % [RPS]->[rad/s]
 p.v_inf = 230/3.6;                      % [m/s]     cruise speed
 p.altitude = 14000/3.281;               % [m]       altitude
 p.collective = 28 / 180 * pi;           % [rad]     collective pitch

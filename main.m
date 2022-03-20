@@ -130,5 +130,41 @@ printFigs(Q2, p, p.pdf);
 propParam;
 projParam;
 
+% starting values of the method (known boundaries)
+Q3.a = 10 /180*pi;
+Q3.b = 40 /180*pi;
+
+i = 1;
+
+while p.Q3_max_iter >= i && (Q3.b - Q3.a) > p.Q3_tol
+    % using middle value
+    p.collective = (Q3.a + Q3.b) / 2;
+    [res, p] = BEM(p);
+    
+    % choosing new boundaries
+    if p.drag_force < res.T
+        Q3.b = p.collective;
+        
+    else % greater than searched value
+        Q3.a = p.collective;
+        
+    end
+    
+    % iteration increment
+    i = i+1;
+end
+
+if p.Q3_max_iter >= i
+    disp(['Q3 converged after ', num2str(i), ' iterations']);
+else
+    warning('Q3 did not converge')
+end
+clear i;
+
+printQ3(res.T, res.P, res.eta_P, p.collective, p.engine_max_power);
+
+
+
+
 
 
