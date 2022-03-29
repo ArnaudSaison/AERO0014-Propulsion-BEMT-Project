@@ -11,7 +11,7 @@ disp( '----------------------------------------------------')
 disp(['Thrust [N] | ', num2str(T)])
 disp(['Power [hp] | ', num2str(P/746), ...
       ' -> ', num2str(P/engine_power*100, '%.1f'), '% of engine power (', ...
-      num2str(engine_power/746), ' hp)'])
+      num2str(engine_power/745.7), ' hp)'])
 disp(['eta_P [-]  | ', num2str(eta_P)])
 disp( '----------------------------------------------------')
 disp( ' ')

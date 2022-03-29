@@ -18,7 +18,7 @@ p.mu = 1.680e-5;                        % [kg/(m*s)]    dynamic viscosity
 % -------------------------------------------------------------------------
 % Itaration parameters
 % -------------------------------------------------------------------------
-p.i.tol = 1e-7;                      	% [-]           tolerance = relative change in velocity components
+p.i.tol = 1e-3;                      	% [-]           tolerance = relative change in velocity components
 p.i.max = 100;                       	% [#]           maximum number of iterations
 
 

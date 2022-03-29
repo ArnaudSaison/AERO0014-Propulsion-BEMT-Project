@@ -27,6 +27,9 @@ p.nb_pos = 100;                                             % [#]	number of posi
 p.pos = linspace(p.root_cutout,1,p.nb_pos);                 % [-]	positions = x/R
 p.r = p.pos * p.R;                                          % [m]	positions = x
 
-p.stagger = (p.tip_stagger - p.root_stagger) * p.pos + p.root_stagger;  % [rad]     stagger angle
-p.chord = (p.tip_chord - p.root_chord) * p.pos + p.root_chord;          % [m]       chord
+p.stagger = linspace(p.root_stagger, p.tip_stagger, p.nb_pos);	% [rad]     stagger angle
+p.chord = linspace(p.root_chord, p.tip_chord, p.nb_pos);     	% [m]       chord
+
+% p.stagger = (p.tip_stagger - p.root_stagger) * p.pos + p.root_stagger;  % [rad]     stagger angle
+% p.chord = (p.tip_chord - p.root_chord) * p.pos + p.root_chord;          % [m]       chord
 
