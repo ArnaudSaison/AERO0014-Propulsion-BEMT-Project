@@ -131,8 +131,8 @@ propParam;
 projParam;
 
 % starting values of the method (known boundaries)
-Q3.a = 10 /180*pi;
-Q3.b = 40 /180*pi;
+Q3.a = 0 /180*pi;
+Q3.b = 90 /180*pi;
 
 i = 1;
 
