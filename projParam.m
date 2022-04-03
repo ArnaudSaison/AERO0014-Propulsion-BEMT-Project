@@ -18,7 +18,7 @@ p.mu = 1.680e-5;                        % [kg/(m*s)]    dynamic viscosity
 % -------------------------------------------------------------------------
 % Itaration parameters
 % -------------------------------------------------------------------------
-p.i.tol = 1e-3;                      	% [-]           tolerance = relative change in velocity components
+p.i.tol = 1e-4;                      	% [-]           tolerance = relative change in velocity components
 p.i.max = 100;                       	% [#]           maximum number of iterations
 
 
@@ -34,7 +34,7 @@ p.collectives = linspace(p.min_collective,p.max_collective,p.nb_collectives) /18
                                         % [deg]->[rad]  different collective pitches
 
 % Question 2
-p.nb_airspeeds = 50;
+p.nb_airspeeds = 100;
 p.min_airspeed = 50;
 p.max_airspeed = 250;
 
@@ -43,5 +43,5 @@ p.airspeeds = linspace(p.min_airspeed,p.max_airspeed,p.nb_airspeeds) ...
 
 % Question 3
 p.expected_power = 0.75 * p.engine_max_power;  % [- * W]   percentage of engine power that should be used in cruise
-p.Q3_tol = 1e-10;                       % [-]       tolerance at which the bisection method stops
+p.Q3_tol = 1e-5;                        % [-]       tolerance at which the bisection method stops
 p.Q3_max_iter = 50;                     % [#]       number of iterations after which the bisection method stops
