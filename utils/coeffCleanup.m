@@ -1,5 +1,5 @@
 function dataOut = coeffCleanup(dataIn, rpl, lower, upper)
-%COEFFCLEANUP removes negative and exploding values and replaces them
+%COEFFCLEANUP removes negative and exploding values then replaces them
 %   dataIn: data to ckean up
 %   rpl: optional parameter to choose what the impossible values are
 %   replace with (default = 0)

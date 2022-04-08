@@ -25,19 +25,19 @@ fig.power = figure('Name', 'Power coefficient as a function of the advance ratio
 plot(Q2.J, Q2.C_P);
 xlim([0, max(Q2.J)]);
 ylim([0, max(Q2.C_P,[],'all') * 1.1]);
-legend(legend_text, 'Location', 'Southwest');
+legend(legend_text, 'Location', 'Northwest');
 xlabel('Advance ratio J [-]')
 ylabel('Power coefficient C_P [-]');
 grid('on');
 
 %
-fig.eff = figure('Name', 'Propulsive efficiency as a function of the advance ratio');
-plot(Q2.J, Q2.eta_P);
+fig.eff = figure('Name', 'Global efficiency as a function of the advance ratio');
+plot(Q2.J, Q2.eta*100);
 xlim([0, max(Q2.J)]);
-ylim([0, 1]);
+ylim([0, 100]);
 legend(legend_text, 'Location', 'Southwest');
 xlabel('Advance ratio J [-]')
-ylabel('Propulsive efficiency \eta_P [-]');
+ylabel('Global efficiency \eta_P [%]');
 grid('on');
 
 % printing to PDF

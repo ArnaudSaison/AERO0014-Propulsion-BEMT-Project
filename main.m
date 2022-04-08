@@ -102,7 +102,7 @@ for speed = 1:p.nb_airspeeds
 
         Q2.C_T(col, speed) = res.C_T;
         Q2.C_P(col, speed) = res.C_P;
-        Q2.eta_P(col, speed) = res.eta_P;
+        Q2.eta(col, speed) = res.eta;
     end
     
     Q2.J(speed) = res.J;
@@ -112,7 +112,7 @@ clear speed col;
 % cleaning up the data to removing impossible values
 Q2.C_T = coeffCleanup(Q2.C_T, -1, 0, 10);
 Q2.C_P = coeffCleanup(Q2.C_P, -1, 0, 10);
-Q2.eta_P = coeffCleanup(Q2.eta_P, -1, 0, 1);
+Q2.eta = coeffCleanup(Q2.eta, -1, 0, 1);
 
 % Printing the figures
 printFigs(Q2, p, p.pdf);
@@ -161,7 +161,7 @@ else
 end
 clear i;
 
-printQ3(res.T, res.P, res.eta_P, p.collective, p.engine_max_power);
+printQ3(res.T, res.P, res.eta, p.collective, p.engine_max_power);
 
 
 

@@ -30,7 +30,7 @@ res.P = integrate(res.dP, p.r);
 printInt(res, p);
 
 % Coefficients
-[res.C_T, res.C_P, res.eta_P, res.J] = coeffs(res, p);
+[res.C_T, res.C_P, res.eta, res.eta_P, res.J] = coeffs(res, p);
 
 % Log
 printCoeffs(res, p);

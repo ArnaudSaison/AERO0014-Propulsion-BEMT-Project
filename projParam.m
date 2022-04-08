@@ -35,7 +35,7 @@ p.collectives = linspace(p.min_collective,p.max_collective,p.nb_collectives) /18
 
 % Question 2
 p.nb_airspeeds = 100;
-p.min_airspeed = 50;
+p.min_airspeed = 40;
 p.max_airspeed = 250;
 
 p.airspeeds = linspace(p.min_airspeed,p.max_airspeed,p.nb_airspeeds) ...
@@ -43,5 +43,5 @@ p.airspeeds = linspace(p.min_airspeed,p.max_airspeed,p.nb_airspeeds) ...
 
 % Question 3
 p.expected_power = 0.75 * p.engine_max_power;  % [- * W]   percentage of engine power that should be used in cruise
-p.Q3_tol = 1e-5;                        % [-]       tolerance at which the bisection method stops
+p.Q3_tol = 1e-7;                        % [-]       tolerance at which the bisection method stops
 p.Q3_max_iter = 50;                     % [#]       number of iterations after which the bisection method stops
