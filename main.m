@@ -13,31 +13,37 @@
 %   propeller using iterative processes and approximations.
 % 
 % User guide:
-%   'main.m'            solves the questions of project
+%   'main.m'            solves the 3 questions for the project
 %   'propParam.m'       contains all the parameters of the propeller
 %   'projParam.m'       contains all the parameters to answer the questions 
 %                       of the project
 % 
 % File Structure:
 %   BEM/
-%       'BEM.m'     
+%       'BEM.m'         runs all the code needed to solve a propeller
 %       'propeller.m'   solves all the sections of the propeller
 %       'section.m'     solves a particular section of the propeller
 %       'intProp.m'     integrates parameters over the whole propeller
 %   TP/
 %       'TP1EX5.m'      solves exercise 5 of the first exercise session of 
 %                       the course
+%       'TP_Param.m'    contains all parameters to solve the exercise
 %   utils/
+%       'coeffCleanup.m'removes impossible values in the coefficients
 %       'dispLog.m'     function to properly display logs that can be
 %                       turned off
-%       'printSec.m'    print section results
-%       'printTot.m'    print propeller results
-%       'printProj.m'   print results of the project
-%       'printFig.m'    print a figure to pdf
+%       'fig2pdf.M'     converts a figure to pdf given its size
+%       'printCoeffs.m' prints C_T, C_P and eta
+%       'printFigs.m'   displays all the figures (contains all figure
+%                       parameters)
+%       'printInt.m'    prints the results after integration
+%       'printQ1.m'     prints the results of question 1
+%       'printQ3.m'     prints the results of question 3
+%       'printSec.m'    prints section results
+%       'printTot.m'    prints propeller results
 % 
-% Data Structure:
+% Data Structure: (stored in Q1, Q2 an Q3 structures)
 %   p                   containes all parameters
-%   p.proj              contains parameters only related to project
 %   res                 contains results
 %
 
@@ -134,15 +140,15 @@ projParam;
 Q3.a = 0 /180*pi;
 Q3.b = 90 /180*pi;
 
-i = 1;
+Q3.i = 1;
 
-while p.Q3_max_iter >= i && (Q3.b - Q3.a) > p.Q3_tol
+while p.Q3_max_iter >= Q3.i && (Q3.b - Q3.a) > p.Q3_tol
     % using middle value
     p.collective = (Q3.a + Q3.b) / 2;
-    [res, p] = BEM(p);
+    [Q3.res, p] = BEM(p);
     
     % choosing new boundaries
-    if p.drag_force < res.T
+    if p.drag_force < Q3.res.T
         Q3.b = p.collective;
         
     else % greater than searched value
@@ -151,17 +157,19 @@ while p.Q3_max_iter >= i && (Q3.b - Q3.a) > p.Q3_tol
     end
     
     % iteration increment
-    i = i+1;
+    Q3.i = Q3.i+1;
 end
 
-if p.Q3_max_iter >= i
-    disp(['Q3 converged after ', num2str(i), ' iterations']);
+if p.Q3_max_iter >= Q3.i
+    disp(['Q3 converged after ', num2str(Q3.i), ' iterations']);
 else
     warning('Q3 did not converge')
 end
-clear i;
 
-printQ3(res.T, res.P, res.eta, p.collective, p.engine_max_power);
+Q3.p = p;
+clear p;
+
+printQ3(Q3.res.T, Q3.res.P, Q3.res.eta, Q3.p.collective, Q3.p.engine_max_power);
 
 
 

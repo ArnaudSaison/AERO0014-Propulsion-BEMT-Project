@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Plane parameters
 % -------------------------------------------------------------------------
-p.v_inf = 160           /3600*1.852e3;  % [kts]->[m/s]  cruise speed (can be changed)
+p.v_inf = 160           /3600*1.852e3;  % [kts]->[m/s]  cruise speed
 p.altitude = 4900       /3.281;      	% [m]           cruise altitude
 p.drag_force = 1030;                    % [N]           drag at cruise conditions
 p.engine_max_power = 260 * 745.7;       % [hp]->[W]     engine maximum power

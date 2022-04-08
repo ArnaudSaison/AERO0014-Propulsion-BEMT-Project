@@ -1,17 +1,14 @@
 % -------------------------------------------------------------------------
 % Propeller: Hartzell HC-C2YK-1BF/8477-8R
 % -------------------------------------------------------------------------
-% Parameters presenting a '(can be changed)' mention are ones that have no 
-% impact on other parameters and can thus be changed during execution (for
-% instance to do multiple simulations)
 
 % main parameters
-p.n = 2;                                % [#]               nb of blades (can be changed)
+p.n = 2;                                % [#]               nb of blades
 p.D = 76            *2.54/100;          % [in]->[m]         diameter = 2 * p.R
 p.R = p.D / 2;                          % [m]               radius = p.D / 2
-p.Omega_n = 2400    /60;                % [RPM]->[RPS]      constant speed (can be changed)
+p.Omega_n = 2400    /60;                % [RPM]->[RPS]      constant speed
 p.Omega = p.Omega_n *2*pi;              % [RPS]->[rad/s]
-p.collective = 0    /180*pi;            % [deg]->[rad]      collective pitch (can be changed)
+p.collective = 0    /180*pi;            % [deg]->[rad]      collective pitch
 p.root_cutout = 0.15;                   % [%]               space taken by the hub
 p.root_chord = 5    *2.54/100;          % [in]->[m]         chord at the root radially
 p.tip_chord = 2     *2.54/100;          % [in]->[m]         chord at the tip

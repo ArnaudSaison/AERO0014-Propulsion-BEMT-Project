@@ -1,7 +1,7 @@
 function printInt(res, p)
 %PRINTINT prints the results after integration
 %   res: results
-%   p:parameters
+%   p: parameters
 %   
 
 dispLog( '----------------------------------------------------', p.verb1, '')

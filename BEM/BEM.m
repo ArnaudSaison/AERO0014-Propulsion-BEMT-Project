@@ -1,5 +1,6 @@
 function [res, p] = BEM(p)
-%BEM (Blade Element Method) computes the properties of a given propeller
+% BEM (Blade Element Method) computes the properties of a given propeller
+%   p: parameters (see projParam.m and propParam.m)
 %   
 
 % Starting values for iterations

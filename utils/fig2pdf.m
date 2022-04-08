@@ -17,7 +17,14 @@ function fig2pdf(fig_name, name, height, AR, folder)
 %   Impotant note: the values contained within this function are based on
 %   experience, but will consistently output figures with the exact same
 %   dimensions.
-%   
+%
+%   -----------------------------------------------------------------------
+%   /!\ WARNING /!\
+%   -----------------------------------------------------------------------
+%   MATLAB WILL ERASE ANY PREVIOUS DOCUMENT THAT HAS THE SAME NAME AND
+%   EXTENSION WITHOUT ASKING
+%   -----------------------------------------------------------------------
+%
 
 % optional argument for folder
 if nargin == 4
