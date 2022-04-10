@@ -37,7 +37,7 @@ xlim([0, max(Q2.J)]);
 ylim([0, 100]);
 legend(legend_text, 'Location', 'Southwest');
 xlabel('Advance ratio J [-]')
-ylabel('Global efficiency \eta_P [%]');
+ylabel('Global efficiency \eta [%]');
 grid('on');
 
 % printing to PDF

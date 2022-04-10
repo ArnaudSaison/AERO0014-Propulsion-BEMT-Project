@@ -77,15 +77,16 @@ projParam;
 % loop for the different collectives
 for col = 1:length(p.collectives)
     p.collective = p.collectives(col);
-    [res, p] = BEM(p);
+    [Q1.res, p] = BEM(p);
 
-    Q1.T(col) = res.T;
-    Q1.P(col) = res.P;
-    Q1.eta_P(col) = res.eta_P;
+    Q1.T(col) = Q1.res.T;
+    Q1.P(col) = Q1.res.P;
+    Q1.eta_P(col) = Q1.res.eta_P;
+    Q1.eta(col) = Q1.res.eta;
 end
 clear col;
 
-printQ1(Q1.T, Q1.P, Q1.eta_P, p.collectives)
+printQ1(Q1.T, Q1.P, Q1.eta_P, Q1.eta, p.collectives, Q1.res.J)
 
 
 %% ========================================================================
