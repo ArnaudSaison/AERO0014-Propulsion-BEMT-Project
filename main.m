@@ -11,6 +11,9 @@
 % Description:
 %   Blade Element Momumentum Theroy. Computes the performance of a given
 %   propeller using iterative processes and approximations.
+%
+%   The project files also contain the resolution of exercise 5 from the
+%   first exercise session.
 % 
 % User guide:
 %   'main.m'            solves the 3 questions for the project
