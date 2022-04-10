@@ -34,7 +34,7 @@ while i.i < p.i.max ...
 
     % 3)
     % mass flow from axial velocity
-    res.dmp(j) = 2 * pi * p.r(j) * p.rho * res.v_a2(j);
+    res.dm_dot(j) = 2 * pi * p.r(j) * p.rho * res.v_a2(j);
 
     % 4)
     % Using relative velocity components, compute velocity magnitude and flow angle
@@ -65,8 +65,8 @@ while i.i < p.i.max ...
 
     % 5)
     % new approximations for absolute velocity components
-    res.v_a3(j) = p.v_inf + res.dF_a(j) / res.dmp(j);
-    res.v_u2p(j) = res.dF_u(j) / res.dmp(j);
+    res.v_a3(j) = p.v_inf + res.dF_a(j) / res.dm_dot(j);
+    res.v_u2p(j) = res.dF_u(j) / res.dm_dot(j);
 
     % incrementation
     i.i = i.i + 1;

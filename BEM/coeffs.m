@@ -4,12 +4,10 @@ function [C_T, C_P, eta, eta_P, J] = coeffs(res, p)
 %   p: parameters
 %
 
-u = res.v_u2(end) - res.w_u2(end);                          % tangential velocity
-Delta_h = u * (res.v_u2p(end) - res.v_u2(end));             % enthalpy rise
-
 eta  = res.T * p.v_inf / res.P;                          	% global efficiency
-eta_h = (res.v_a3(end)^2 - p.v_inf^2) / (2*Delta_h);        % hydrodynamic efficiency
-eta_P = eta / eta_h;                                        % propulsive efficiency
+
+v_a1 = - res.dF_a ./ res.dm_dot + res.v_a3;                 % should be v_inf
+eta_P = res.T * p.v_inf ./ integrate(res.dm_dot .* (res.v_a3.^2 - v_a1.^2)/2, p.r); % propulsive efficiency
 
 C_T = 4 * res.T / (p.D^2 * p.rho * p.Omega_n^2 * p.D^2);   	% thrust coefficient
 C_P = 4 * res.P / (p.rho * p.Omega_n^3 * p.D^5);           	% power coefficient
